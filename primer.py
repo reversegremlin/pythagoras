@@ -104,27 +104,25 @@ print(sum_of_squares_odd2(4))
 # references the same element?
 
 s = "pythonstring"
-k = -1
-print(s[k])
 n = len(s)
-print(s[n + k])
-print
 
-
-for j in range(-n, 0):
-    print(s[j])
+for k in range(-n, 0):
+    print(s[k])
 
 
 for j in range(-n, 0):
     print(s[j + n])
 
-
-# print(s[0])
-
 # R-1.9
+# What parameters should be sent to the range constructor, to produce a range with values 50, 60, 70, 80?
 
+print(range(50, 90, +10))
 
 # R-1.10
+# what parameters should be sent to the range constructor to produce a range with values
+# 8, 6, 4, 2, 0, -2, -4, -6, -8
+
+print(range(-10))
 
 
 # R-1.11
