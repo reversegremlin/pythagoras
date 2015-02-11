@@ -108,6 +108,18 @@ k = -1
 print(s[k])
 n = len(s)
 print(s[n + k])
+print
+
+
+for j in range(-n, 0):
+    print(s[j])
+
+
+for j in range(-n, 0):
+    print(s[j + n])
+
+
+# print(s[0])
 
 # R-1.9
 
