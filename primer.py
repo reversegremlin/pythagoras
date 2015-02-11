@@ -1,10 +1,11 @@
+import random
+
 # R-1.1
 # Write a short Python function, is multiple(n, m), that takes two integer values and returns
 # True if n is a multiple of m, that is, n = mi for some integer i, and False otherwise.
 
 def is_multiple(m, n):
     return True if m % n == 0 else False
-
 
 print(is_multiple(10, 3))
 print(is_multiple(10, 2))
@@ -15,7 +16,6 @@ print(is_multiple(10, 2))
 
 def is_even(k):
     return False if k & 1 else True
-
 
 print(is_even(2))
 print(is_even(3))
@@ -124,13 +124,11 @@ print(range(50, 90, +10))
 
 print(range(8, -10, -2))
 
-
 # R-1.11
 # Demonstrate how to use Python's list comprehension syntax to produce the list
 # [1, 2, 4, 8, 16, 32, 64, 128, 256].
 
 print([pow(2, k) for k in range(0, 9, +1)])
-
 
 # R-1.12
 
@@ -138,3 +136,9 @@ print([pow(2, k) for k in range(0, 9, +1)])
 # from a non-empty sequence. The random module in- cludes a more basic function randrange,
 # with parameterization similar to the built-in range function, that return a random choice
 # from the given range. Using only the randrange function, implement your own version of the choice function.
+
+def my_choice(data):
+    return data[random.randrange(0, len(data) - 1)]
+
+
+print(my_choice(alpha))
