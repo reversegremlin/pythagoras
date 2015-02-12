@@ -36,7 +36,7 @@ def minmax(data):
     return smallest, largest
 
 
-alpha = [7, 2, 3, 4, 5, 6, 7, 8, 99]
+alpha = [2, 2, 3, 4, 5, 6, 7, 8, 99]
 
 print(minmax(alpha))
 
@@ -137,8 +137,66 @@ print([pow(2, k) for k in range(0, 9, +1)])
 # with parameterization similar to the built-in range function, that return a random choice
 # from the given range. Using only the randrange function, implement your own version of the choice function.
 
+
 def my_choice(data):
     return data[random.randrange(0, len(data) - 1)]
 
 
 print(my_choice(alpha))
+
+# C-1.13
+
+# Write a pseudo-code description of a function that reverses a list of n integers,
+# so that the numbers are listed in the opposite order than they were before, and compare
+# this method to an equivalent Python function for doing the same thing.
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+def reverse(data):
+    temp = []
+    n = len(data) - 1
+    for thing in range(n, -1, -1):
+        temp.append(data[thing])
+    return temp
+
+
+print(my_list)
+
+print(reverse(my_list))
+
+# C-1.14
+# Write a short Python function that takes a sequence of integer values and determines
+# if there is a distinct pair of numbers in the sequence whose product is odd.
+
+def odd_pair(data):
+    count = 0
+    for k in range(0, len(data) - 1):
+        if k % 2 != 0:
+            count += 1
+    return True if count >= 2 else False
+
+
+evens = [2, 4, 6, 8]
+print(odd_pair(my_list))
+print(odd_pair(evens))
+
+# C-1.15
+# Write a Python function that takes a sequence of numbers and determines
+# if all the numbers are different from each other (that is, they are distinct).
+
+def are_distinct(data):
+    count = 0
+    for k in data:
+        for j in range(1, len(data) - 1):
+            if k == j:
+                count += 1
+                if count == 2:
+                    return False
+    return True
+
+
+print(are_distinct(evens))
+print(are_distinct(alpha))
+
+print("a")
