@@ -212,5 +212,38 @@ print([k * (k - 1) for k in range(1, 11)])
 
 print([chr(k) for k in range(97, 123)])
 
-# print(chr(ord('A') + 1))
-print(chr(97))
+# C-1.20
+# python's random module includes a function shuffle(data) that accepts a list
+# of elements and randomly reorders the elements so that each possible order
+# occurs with equal probability. The random module includes a more basic function
+#  randint(a, b) that returns a uniformly random integer from a to b
+# (including both endpoints). Using only the randint function,
+#  implement your own version of the shuffle function.
+
+def shufl(data):
+    for k in range(0, len(data)):
+        random_index = random.randint(0, k)
+        tmp = data[random_index]
+        data[random_index] = data[k]
+        data[k] = tmp
+
+
+shufl(alpha)
+print(alpha)
+
+# C-1.21
+# Write a Python program that repeatedly reads lines from standard input until an EOFError
+# is raised, and then outputs those lines in reverse order
+#  (a user can indicate end of input by typing ctrl-D).
+
+done = False
+lines = []
+
+while not done:
+    try:
+        line = raw_input()
+        lines.append(line)
+    except (EOFError):
+        for l in range(len(lines) - 1, -1, -1):
+            print(lines[l])
+            done = True
