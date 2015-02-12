@@ -1,3 +1,4 @@
+# coding=utf-8
 import random
 
 # R-1.1
@@ -236,14 +237,69 @@ print(alpha)
 # is raised, and then outputs those lines in reverse order
 #  (a user can indicate end of input by typing ctrl-D).
 
-done = False
-lines = []
+# done = False
+# lines = []
+#
+# while not done:
+# try:
+#         line = raw_input('Enter text, i shall print it in reversed order, ctrl-d to stop')
+#         lines.append(line)
+#     except (EOFError):
+#         for l in range(len(lines) - 1, -1, -1):
+#             print(lines[l])
+#             done = True
 
-while not done:
-    try:
-        line = raw_input()
-        lines.append(line)
-    except (EOFError):
-        for l in range(len(lines) - 1, -1, -1):
-            print(lines[l])
-            done = True
+# C-1.22
+# Write a short Python program that takes two arrays a and b of length n storing int values,
+# and returns the dot product of a and b. That is, it returns an array c of length n such that
+# c[i] = a[i]·b[i],
+# for i = 0,...,n−1.
+
+first = [1, 2, 3, 4]
+second = [1, 2, 3, 4]
+
+
+def dot_product(a, b):
+    # assume n is the same for both
+    c = []
+    for k in range(0, len(a)):
+        c.append(a[k] + b[k])
+    return c
+
+
+third = dot_product(first, second)
+
+print(third)
+
+# C-1.23
+# Give an example of a Python code fragment that attempts
+# to write an ele- ment to a list based on an index that may be out of bounds.
+# If that index is out of bounds, the program should
+# catch the exception that results, and print the following error message:
+# “Don’t try buffer overflow attacks in Python!”
+
+
+a_list = [1, 2, 3, 4]
+
+try:
+    a_list[4] = 5
+except IndexError:
+    print("Don't try buffer overflow attacks in Python")
+
+
+# C-1.24
+# Write a short Python function that counts the number of vowels in a given
+# character string.
+#
+given_string = "There are 9 vowels in this string"
+count = 0
+
+for c in given_string:
+    if c == 'a' or c == 'e' or c == 'i' or c == 'o' or c == "u":
+        count += 1
+
+print(count)
+
+
+
+
