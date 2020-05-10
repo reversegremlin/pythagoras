@@ -300,6 +300,21 @@ for c in given_string:
 
 print(count)
 
+# C-1.25
+#WriteashortPython function thattakes astrings,representing asentence,
+#and returns a copy of the string with all punctuation removed. For example,
+#if given the string "Let s try, Mike.", this function would return "Lets try Mike".
+#
+given_string = 'Let\'s try, Mike.'
+
+punctuations = ''''~!@#$%^*()_-{}[]|\:'";<>,./'''  # Take help of your keyboard to remember this.
+
+newstring = ''
+for i in given_string:
+    if i not in punctuations:
+        newstring += i
+
+print(newstring)
 
 #C-1.28 
 # For the special case of p = 2, this results in the traditional Euclidean norm, which represents the length of the vector. 
